@@ -1,0 +1,5 @@
+Change schema of a table
+
+Use TutorialDB   //use database name
+ALTER SCHEMA xing
+TRANSFER dbo.Customers
