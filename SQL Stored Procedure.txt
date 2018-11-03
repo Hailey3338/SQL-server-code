@@ -1,0 +1,38 @@
+A stored procedure is a prepared SQL code that you can save, so the code can be reused over and over again.
+So if you have an SQL query that you write over and over again, save it as a stored procedure, and then just call it to execute it.
+You can also pass parameters to a stored procedure, so that the stored procedure can act based on the parameter value(s) that is passed.
+
+//Create procedure
+Create Procedure SelectSpecificCustomer
+AS 
+SELECT Name, CustomerId, Email
+FROM  Customers
+WHERE (CustomerId = 3)
+Go
+
+//Alter existing procedure
+Alter Procedure SelectSpecificCustomer
+AS 
+SELECT Name, CustomerId, Email
+FROM  Customers
+WHERE (CustomerId = 3)
+Go
+
+//execute procedure
+EXEC SelectSpecificCustomer
+
+//带参数的
+Alter Procedure SelectSpecificOrder @Totalprice int
+AS
+Select * from Orders where Totalprice = @Totalprice
+Go
+
+Alter Procedure SelectSpecificOrder @Totalprice int
+AS
+Select * from Orders where Totalprice > @Totalprice
+Go
+
+//执行带参数的
+Exec SelectSpecificOrder @Totalprice = "10";
+
+Exec SelectSpecificOrder @Totalprice = 10;
