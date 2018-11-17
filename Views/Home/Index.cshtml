@@ -1,0 +1,80 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="http://cdn-na.infragistics.com/igniteui/2018.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
+    <link href="http://cdn-na.infragistics.com/igniteui/2018.2/latest/css/structure/infragistics.css" rel="stylesheet" />
+
+    <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="http://cdn-na.infragistics.com/igniteui/2018.2/latest/js/infragistics.core.js"></script>
+    <script src="http://cdn-na.infragistics.com/igniteui/2018.2/latest/js/infragistics.lob.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>Index</title>
+</head>
+<body>
+    <style>
+        #client {
+            margin-top: 85px;
+        }
+
+        #ageFrom {
+            margin-top: 85px;
+        }
+
+        #ageTo {
+            margin-top: 85px;
+        }
+
+        #hobby {
+            margin-top: 85px;
+        }
+    </style>
+    <h3>Search user infomation</h3>
+    @using (Html.BeginForm("SearchUser", "Home", FormMethod.Get))
+    {
+        <form>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="exampleInputName" class="col">Name</label>
+
+                    <div class="col align-self-start">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="searchName" placeholder="Enter name" />
+                    </div>
+                    <div class="col align-self-start">
+                        <label for="ageFrom">Age</label>
+                        <input type="text" class="form-control" name="searchAgeFrom" placeholder="Enter age" />
+                    </div>
+                    <label for="name">bis</label>
+                    <div class="col align-self-start">
+                        <label for="ageTo">Age</label>
+                        <input type="text" class="form-control" name="searchAgeTo" placeholder="Enter age" />
+                    </div>
+                    <div class="col align-self-start">
+                        <label for="hobby">Hobby</label>
+                        <input type="text" class="form-control" name="searchHobby" placeholder="Enter hobby" />
+                    </div>
+
+                </div>
+            </div>
+            <br />
+            <div class="col-md-6 text-right">
+                <button type="reset" class="btn btn-secondary">Cancel</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    }
+   
+    </body>
+</html>
