@@ -1,1 +1,24 @@
 https://stackoverflow.com/questions/3415582/how-can-i-use-optional-parameters-in-a-t-sql-stored-procedure
+
+SET example:
+USE AdventureWorks2012;  
+GO  
+DECLARE @state char(25);  
+SET @state = N'Oregon';  
+SELECT RTRIM(FirstName) + ' ' + RTRIM(LastName) AS Name, City  
+FROM HumanResources.vEmployee  
+WHERE StateProvinceName = @state;  
+
+USE AdventureWorks2012;  
+GO  
+DECLARE @rows int;  
+SET @rows = (SELECT COUNT(*) FROM Sales.Customer);  
+SELECT @rows; 
+
+Select example: 
+DECLARE @var1 varchar(30);         
+SELECT @var1 = 'Generic Name';         
+SELECT @var1 = Name         
+FROM Sales.Store         
+WHERE CustomerID = 1000 ;        
+SELECT @var1 AS 'Company Name'; 
